@@ -47,7 +47,7 @@ return [
     // 应用类库后缀
     'class_suffix'           => false,
     // 控制器类后缀
-    'controller_suffix'      => 'Controller',
+    'controller_suffix'      => false,
 
     // +----------------------------------------------------------------------
     // | 模块设置
