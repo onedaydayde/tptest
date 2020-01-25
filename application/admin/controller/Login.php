@@ -39,12 +39,12 @@ class Login extends Controller
             $password = $params['password'];
             //数据库查询当前用户名的哈希密码
             $manager=Db::table('tpshop_manager')->where('username',$params['username'])->find();
+//            dump($manager);
             //库中密码与提交密码解密匹配是否为true
             if (password_verify($password,$manager['password'])) {
                 //登录成功
                 //设置登录标识到session
-                Session::set('name',$manager['username']);
-                Session::set('password',$manager['password']);
+                \session('user_info',$manager);
                 //页面跳转
                 $this->success('登录成功', 'admin/index/index');
             } else {
@@ -57,6 +57,19 @@ class Login extends Controller
             $this->view->engine->layout(false);
             return view();
         }
+    }
+
+    /**
+     * 退出登陆
+     *
+     * @param int $id
+     * @return \think\Response
+     */
+    public function logout()
+    {
+        //情况session
+        session(null);
+        $this->redirect('admin/login/login');
     }
 
     /**
