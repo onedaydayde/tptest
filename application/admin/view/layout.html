@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Purple Admin</title>
+    <title>后台管理系统</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/assets/images/favicon.png" />
+    <style>
+        .dropdown .dropdown-menu .dropdown-item:hover {
+            background-color: #e8e8e8;
+            color: #ac4cff;
+        }
+    </style>
 </head>
 <body>
 <div class="container-scroller">
@@ -55,7 +61,7 @@
                         <a class="dropdown-item" href="#">
                             <i class="mdi mdi-cached mr-2 text-success"></i> 活动日志 </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{:url('admin/login/logout')}">
+                        <a class="dropdown-item" href="{:url('/logout')}">
                             <i class="mdi mdi-logout mr-2 text-primary"></i> 退出 </a>
                     </div>
                 </li>
