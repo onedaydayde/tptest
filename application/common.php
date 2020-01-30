@@ -10,3 +10,12 @@
 // +----------------------------------------------------------------------
 
 // 应用公共文件
+if (!function_exists('encrypt_password')){
+    //定义一个加密函数
+    function encrypt_password($password)
+    {
+        //自定义加密
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        return $hash;
+    }
+}
